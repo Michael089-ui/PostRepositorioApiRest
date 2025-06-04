@@ -1,0 +1,158 @@
+{
+    "info": {
+        "name": "API Blog - Espa\u00f1ol",
+        "_postman_id": "blog-api-espanol-collection",
+        "description": "Colecci\u00f3n de pruebas para API de blog con autores, publicaciones y comentarios",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Crear autor",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Andr\\u00e9s Dev\",\n    \"email\": \"andres@ejemplo.com\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/autores/crear",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "autores",
+                        "crear"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Crear publicaci\u00f3n para autor ID 1",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"titulo\": \"Primera publicaci\\u00f3n\",\n    \"contenido\": \"Este es el contenido de la publicaci\\u00f3n\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/publicaciones/crear/autor/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "publicaciones",
+                        "crear",
+                        "autor",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Crear comentario para publicaci\u00f3n ID 1",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"text\": \"\\u00a1Muy buena publicaci\\u00f3n!\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/comentarios/crear/publicacion/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "comentarios",
+                        "crear",
+                        "publicacion",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Listar todos los autores",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/autores/todos",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "autores",
+                        "todos"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Listar todas las publicaciones",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/publicaciones/todas",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "publicaciones",
+                        "todas"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Listar todos los comentarios",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/comentarios/todos",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "comentarios",
+                        "todos"
+                    ]
+                }
+            }
+        }
+    ]
+}
